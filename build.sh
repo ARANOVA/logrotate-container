@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
-TRAVIS_BRANCH_STRIPPED=${TRAVIS_BRANCH/[^a-zA-Z0-9]/_}
+TRAVIS_BRANCH_STRIPPED=1.0.0
+DOCKERHUB_USERNAME=psanchezg
+IMAGE_NAME=logrotate
 
 # Build docker image
 docker build --no-cache -t myimage .
@@ -11,7 +13,7 @@ LOGROTATE_VERSION_MAJOR=$(echo "${LOGROTATE_VERSION_FULL}" | awk -F '.' '{print 
 LOGROTATE_VERSION_MINOR=$(echo "${LOGROTATE_VERSION_FULL}" | awk -F '.' '{print $2}')
 
 # Login into docker hub
-echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+#echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
 
 # Handle main branch different
 if [ "${TRAVIS_BRANCH_STRIPPED}" == "main" ]; then
