@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-TRAVIS_BRANCH_STRIPPED=1.0.0
+TRAVIS_BRANCH_STRIPPED=1.0.1
 DOCKERHUB_USERNAME=psanchezg
 IMAGE_NAME=logrotate
 
