@@ -4,9 +4,9 @@ LABEL org.opencontainers.image.source https://github.com/mkilchhofer/logrotate-c
 LABEL org.opencontainers.image.source https://github.com/ARANOVA/logrotate-container
 
 ARG USER=distroless
-ARG USERID=65535
+ARG USERID=65532
 ARG GROUP=distroless
-ARG GROUPID=65535
+ARG GROUPID=65532
 
 RUN apk --update add --no-cache logrotate && \
     rm -f /etc/logrotate.d/*
